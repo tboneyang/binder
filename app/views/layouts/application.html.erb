@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="wrapper">
+
+	<ul class="hmenu">
+		<%= render 'layouts/loginheader' %>
+	</ul>	
 
 <%= yield %>
+</div>
+<div class="footer">
+	<%= render 'layouts/footer' %>
+</div>
+
 
 </body>
 </html>

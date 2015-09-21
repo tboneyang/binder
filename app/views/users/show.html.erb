@@ -1,0 +1,25 @@
+<p>
+  <strong>Title:</strong>
+  <%= @user.email %>
+</p>
+
+<h2>amigos</h2>
+<% @user.amigos.each do |amigo| %>
+  <p>
+    <strong>Name:</strong>
+    <%= amigo.name %>
+  </p>
+
+<% end %>
+ 
+<h2>Add an amigo:</h2>
+<%= form_for([@user, @user.amigos.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 

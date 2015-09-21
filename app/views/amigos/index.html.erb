@@ -25,19 +25,17 @@
         <td><%= amigo.last_talked_about %></td>
         <td><%= amigo.description %></td>
         <td><%= amigo.last_contacted %></td>
-        <td><%= amigo.type %></td>
+        <td><%= amigo.category %></td>
         <td><%= amigo.email %></td>
         <td><%= amigo.phone_number %></td>
         <td><%= amigo.birthday %></td>
         <td><%= amigo.address %></td>
-        <td><%= link_to 'Show', amigo %></td>
-        <td><%= link_to 'Edit', edit_amigo_path(amigo) %></td>
-        <td><%= link_to 'Destroy', amigo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      
+        </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Amigo', new_amigo_path %>
+<%= link_to 'New Amigo', new_user_amigo_path %>

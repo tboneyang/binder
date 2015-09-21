@@ -4,12 +4,13 @@ class AmigosController < ApplicationController
   # GET /amigos
   # GET /amigos.json
   def index
-    @amigos = Amigo.all
+    @amigos = current_user.amigos.find(params[:id])
   end
 
   # GET /amigos/1
   # GET /amigos/1.json
   def show
+
   end
 
   # GET /amigos/new
@@ -24,17 +25,22 @@ class AmigosController < ApplicationController
   # POST /amigos
   # POST /amigos.json
   def create
+    @user = current_user
+    @amigo = @user.amigos.create(amigo_params)
+    redirect_to user_path(@user)
     @amigo = Amigo.new(amigo_params)
 
-    respond_to do |format|
-      if @amigo.save
-        format.html { redirect_to @amigo, notice: 'Amigo was successfully created.' }
-        format.json { render :show, status: :created, location: @amigo }
-      else
-        format.html { render :new }
-        format.json { render json: @amigo.errors, status: :unprocessable_entity }
-      end
-    end
+    
+ #   respond_to do |format|
+  #    if @amigo.save
+   #     format.html { redirect_to @amigo, notice: 'Amigo was successfully created.' }
+    #    format.json { render :show, status: :created, location: @amigo }
+    #  else
+     #   format.html { render :new }
+      #  format.json { render json: @amigo.errors, status: :unprocessable_entity }
+      #end
+    #end
+    
   end
 
   # PATCH/PUT /amigos/1
@@ -69,6 +75,6 @@ class AmigosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def amigo_params
-      params.require(:amigo).permit(:name, :last_talked_about, :description, :last_contacted, :type, :email, :phone_number, :birthday, :address)
+      params.require(:amigo).permit(:name, :last_talked_about, :description, :last_contacted, :category, :email, :phone_number, :birthday, :address, :user_id)
     end
 end
