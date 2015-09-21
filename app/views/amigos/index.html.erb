@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Amigos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last talked about</th>
+      <th>Description</th>
+      <th>Last contacted</th>
+      <th>Type</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Birthday</th>
+      <th>Address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @amigos.each do |amigo| %>
+      <tr>
+        <td><%= amigo.name %></td>
+        <td><%= amigo.last_talked_about %></td>
+        <td><%= amigo.description %></td>
+        <td><%= amigo.last_contacted %></td>
+        <td><%= amigo.type %></td>
+        <td><%= amigo.email %></td>
+        <td><%= amigo.phone_number %></td>
+        <td><%= amigo.birthday %></td>
+        <td><%= amigo.address %></td>
+        <td><%= link_to 'Show', amigo %></td>
+        <td><%= link_to 'Edit', edit_amigo_path(amigo) %></td>
+        <td><%= link_to 'Destroy', amigo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Amigo', new_amigo_path %>

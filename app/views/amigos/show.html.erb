@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @amigo.name %>
+</p>
+
+<p>
+  <strong>Last talked about:</strong>
+  <%= @amigo.last_talked_about %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @amigo.description %>
+</p>
+
+<p>
+  <strong>Last contacted:</strong>
+  <%= @amigo.last_contacted %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @amigo.type %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @amigo.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @amigo.phone_number %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @amigo.birthday %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @amigo.address %>
+</p>
+
+<%= link_to 'Edit', edit_amigo_path(@amigo) %> |
+<%= link_to 'Back', amigos_path %>
