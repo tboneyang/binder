@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'react-rails', '~> 1.0'
+# ReactJS app
+gem 'react-rails', '~> 1.3.0'
+#add devise user
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use postgresql as the database for Active Record
